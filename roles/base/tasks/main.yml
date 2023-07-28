@@ -1,0 +1,44 @@
+---
+- name: Update cache and upgrade
+  community.general.pacman:
+    update_cache: true
+    upgrade: true
+    upgrade_extra_args: --noconfirm
+  become: true
+  tags:
+    - pre
+
+- name: Install Utils
+  community.general.pacman:
+    name: "{{ utils }}"
+    state: present
+  become: true
+  tags:
+    - utils
+    - base
+
+- name: Install Utils from Arch User Repository
+  ansible.builtin.shell: |
+    set -o pipefail
+    pamac build -d --no-confirm {{ item }} | grep "is up to date"
+    if [ $? != 0 ]; then
+      pamac build --no-confirm {{ item }}
+    fi
+  with_items: "{{ utils_aur }}"
+  become: true
+  register: command_result
+  failed_when: command_result.rc != 0
+  changed_when: "'successfully' in command_result.stdout"
+  tags:
+    - base
+    - utils-aur
+    - aur
+
+- name: Configure Hostname
+  ansible.builtin.import_tasks: hostname.yml
+
+- name: Configure Zsh
+  ansible.builtin.import_tasks: zsh.yml
+
+- name: Configure Browsers
+  ansible.builtin.import_tasks: browsers.yml

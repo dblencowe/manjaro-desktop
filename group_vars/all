@@ -1,0 +1,127 @@
+browsers:
+    - firefox
+
+browsers_aur:
+
+comms:
+    - signal-desktop
+    - discord
+
+comms_aur:
+
+developer_stack:
+    - ansible
+    - ansible-lint
+    - docker
+    - docker-compose
+    - go
+    - go-tools
+    - go-yq
+    - jq
+    - kubectl
+    - kubectx
+    - npm
+    - terraform
+    - arduino
+    - mysql-workbench
+
+developer_stack_aur:
+    - aws-cli-v2-bin
+    - aws-session-manager-plugin
+    - golangci-lint
+    - go-swagger-bin
+    - kubefwd-bin
+    - lens-bin
+    - mongosh-bin
+    - mongodb-bin 
+    - mongodb-tools-bin
+    - nancy-bin
+    - nvm
+    - postman-bin
+    - robo3t-bin
+    - tfswitch-bin
+
+editors:
+    - vim
+
+editors_aur:
+    - goland
+    - jetbrains-toolbox
+    - visual-studio-code-bin
+
+media:
+    - peek
+    - blender
+    - gimp
+    - freecad
+
+media_aur:
+    - spotify
+    - libwebcam-git
+
+shell_aliases:
+    - alias ll='ls -lrt'
+    - alias rgrep='grep -r'
+    - alias vi=vim
+    - alias pbcopy='xsel --clipboard --input'
+    - alias pbpaste='xsel --clipboard --output'
+
+utils:
+    - build-essential
+    - base-devel
+    - binutils
+    - bluez
+    - bluez-utils
+    - gcc
+    - gconf
+    - gum
+    - htop
+    - keychain
+    - libcurl-gnutls
+    - lib32-glibc
+    - make
+    - mlocate
+    - ntp
+    - openssl-1.0
+    - pamac
+    - python-pip
+    - pwgen
+    - tree
+    - unixodbc
+    - wget
+    - xclip
+    - xorg-xinput
+
+utils_aur:
+    - git-extras
+    - lsdesktopf
+    - mkpasswd
+    - zsh-git-prompt
+
+security_tools:
+    - clamav
+    - clamtk
+    - gufw
+    - ufw
+    - ufw-extras
+    - bitwarden
+
+user_groups:
+    - docker
+    - audio
+    - uucp
+    - dialout
+
+zsh_plugins:
+    - aws
+    - archlinux
+    - colored-man-pages
+    - docker
+    - docker-compose
+    - dotenv
+    - git
+    - git-prompt
+    - git-extras
+    - git-flow
+    - screen
+    - terraform

@@ -1,0 +1,34 @@
+---
+- name: Install Developer Tools
+  community.general.pacman:
+    name: "{{ developer_stack }}"
+    state: present
+  become_user: root
+  become: true
+  tags:
+    - dev-tools
+    - development
+
+- name: Configure Go
+  ansible.builtin.import_tasks: go.yml
+
+- name: Install Developer Tools from Arch User Repository
+  ansible.builtin.script: ../../../aur/install-aur.sh {{ item }}
+  with_items: "{{ developer_stack_aur }}"
+  register: install_result
+  changed_when: install_result.rc == 0
+  failed_when: install_result.rc != 0 and install_result.rc != 255
+  tags:
+    - dev-tools-aur
+    - development-aur
+    - development
+    - aur
+
+- name: Configure Docker
+  ansible.builtin.import_tasks: docker.yml
+
+- name: Configure Kubectl
+  ansible.builtin.import_tasks: kubectl.yml
+
+- name: Configure Editors
+  ansible.builtin.import_tasks: editors.yml

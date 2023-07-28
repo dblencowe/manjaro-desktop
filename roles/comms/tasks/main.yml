@@ -1,0 +1,17 @@
+---
+- name: Install communication/instant messenger apps
+  community.general.pacman:
+    name: "{{ comms }}"
+    state: present
+  become: true
+
+- name: Install communication/instant messenger apps from Arch User Repository
+  ansible.builtin.script: ../../../aur/install-aur.sh {{ item }}
+  with_items: "{{ comms_aur }}"
+  register: install_result
+  changed_when: install_result.rc == 0
+  failed_when: install_result.rc != 0 and install_result.rc != 255
+  tags:
+    - aur
+    - comms
+    - comms-aur

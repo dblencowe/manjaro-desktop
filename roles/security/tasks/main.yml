@@ -1,0 +1,16 @@
+---
+- name: Install security tools
+  community.general.pacman:
+    name: "{{ security_tools }}"
+    state: present
+  become: true
+  tags:
+    - security
+    - clamav
+    - ufw
+
+- name: Configure Clamav
+  ansible.builtin.import_tasks: clamav.yml
+
+- name: Configure ufw
+  ansible.builtin.import_tasks: ufw.yml

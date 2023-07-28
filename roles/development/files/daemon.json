@@ -1,0 +1,5 @@
+{
+    "insecure-registries": [
+        "cluster-nas-1.services.{{ internal_domain }}:5000"
+    ]
+}
