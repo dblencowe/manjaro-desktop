@@ -73,14 +73,11 @@ shell_aliases:
     - alias git-log="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all"
 
 utils:
-    - build-essential
     - base-devel
     - binutils
     - bluez
     - bluez-utils
     - gcc
-    - gconf
-    - gum
     - htop
     - keychain
     - libcurl-gnutls
@@ -88,20 +85,16 @@ utils:
     - make
     - mlocate
     - ntp
-    - openssl-1.0
     - pamac
     - python-pip
     - pwgen
     - tree
-    - unixodbc
     - wget
     - xclip
     - xorg-xinput
 
 utils_aur:
     - git-extras
-    - lsdesktopf
-    - mkpasswd
     - zsh-git-prompt
 
 security_tools:

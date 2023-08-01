@@ -27,8 +27,5 @@
 - name: Configure Docker
   ansible.builtin.import_tasks: docker.yml
 
-- name: Configure Kubectl
-  ansible.builtin.import_tasks: kubectl.yml
-
 - name: Configure Editors
   ansible.builtin.import_tasks: editors.yml

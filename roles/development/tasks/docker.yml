@@ -7,6 +7,15 @@
     - development
     - docker
 
+- name: Docker - Create config directory
+  become: true
+  file:
+    path: /etc/docker
+    state: directory
+  tags:
+    - docker
+    - development
+
 - name: Docker - Create daemon.json
   ansible.builtin.copy:
     src: daemon.json

@@ -1,7 +1,7 @@
 - name: Set the hostname
   become: true
   hostname:
-    name: "{{ inventory_hostname }}"
+    name: "{{ hostname }}"
   tags:
     - base
     - hostname
@@ -11,7 +11,7 @@
   lineinfile:
     dest: /etc/hosts
     regexp: '^127\.0\.0\.1[ \t]+localhost'
-    line: '127.0.0.1 localhost {{ inventory_hostname }}'
+    line: '127.0.0.1 localhost {{ hostname }}'
     state: present
   tags:
     - base

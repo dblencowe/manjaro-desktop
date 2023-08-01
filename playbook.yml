@@ -15,4 +15,4 @@
       ansible.builtin.import_tasks: handlers/freshclam.yml
 
     - name: Configure .zshrc
-      ansible.builtin.import_tasks: handlers/zshrc.yml
+      ansible.builtin.import_tasks: handlers/zsh.yml
