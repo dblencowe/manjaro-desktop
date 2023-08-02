@@ -8,6 +8,8 @@ comms:
     - discord
 
 comms_aur:
+    - todoist
+    - todoist-appimage
 
 developer_stack:
     - ansible
