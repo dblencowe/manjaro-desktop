@@ -42,3 +42,6 @@
 
 - name: Configure Browsers
   ansible.builtin.import_tasks: browsers.yml
+
+- name: Configure Hybrid GPU
+  ansible.builtin.import_tasks: nvidia.yml

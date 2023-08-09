@@ -33,7 +33,7 @@ developer_stack_aur:
     - golangci-lint
     - go-swagger-bin
     - kubefwd-bin
-    - lens-bin
+    - openlens-bin
     - mongosh-bin
     - mongodb-bin 
     - mongodb-tools-bin
@@ -43,6 +43,9 @@ developer_stack_aur:
     - robo3t-bin
     - tfswitch-bin
     - openlens-bin
+
+docker_insecure_registries:
+    - cluster-nas-1.services.strawberryelk.internal:5000
 
 editors:
     - vim
@@ -73,6 +76,7 @@ shell_aliases:
     - alias git-log="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all"
 
 utils:
+    - acpi_call-dkms
     - base-devel
     - binutils
     - bluez
@@ -92,6 +96,7 @@ utils:
     - wget
     - xclip
     - xorg-xinput
+    - optimus-manager
 
 utils_aur:
     - git-extras

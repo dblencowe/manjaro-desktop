@@ -1,0 +1,32 @@
+---
+- name: Check if optimus-manager configuration exists
+  ansible.builtin.stat:
+    path: /etc/optimus-manager/optimus-manager.conf
+  register: optimus_file_check
+  tags:
+    - base
+    - nvidia
+
+- name: Copy optimus-manager configuration
+  ansible.builtin.copy:
+    src: optimus-manager.conf.j2
+    dest: /etc/optimus-manager/optimus-manager.conf
+  become: true
+  when: not optimus_file_check.stat.exists
+  tags:
+    - base
+    - nvidia
+
+- name: Disable default DisplayCommands
+  ansible.builtin.lineinfile:
+    dest: /etc/sddm.conf
+    regexp: "^({{ item }}=.*)"
+    line: '#\1'
+    state: present
+  with_items:
+    - DisplayCommand
+    - DisplayStopCommand
+  become: true
+  tags:
+    - base
+    - nvidia

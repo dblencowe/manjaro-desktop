@@ -17,7 +17,7 @@
     - development
 
 - name: Docker - Create daemon.json
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: daemon.json
     dest: /etc/docker/daemon.json
     mode: "0644"

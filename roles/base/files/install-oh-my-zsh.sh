@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh -
 
 # Only install if package does not exist
 if [ -d "/home/${1}/.oh-my-zsh" ]; then
