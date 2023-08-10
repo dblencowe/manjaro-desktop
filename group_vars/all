@@ -26,6 +26,7 @@ developer_stack:
     - terraform
     - arduino
     - mysql-workbench
+    - helm
 
 developer_stack_aur:
     - aws-cli-v2-bin
@@ -43,6 +44,7 @@ developer_stack_aur:
     - robo3t-bin
     - tfswitch-bin
     - openlens-bin
+    - helm-diff
 
 docker_insecure_registries:
     - cluster-nas-1.services.strawberryelk.internal:5000
