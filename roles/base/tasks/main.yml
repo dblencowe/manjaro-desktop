@@ -34,6 +34,9 @@
     - utils-aur
     - aur
 
+- name: Configure User Groups
+  ansible.builtin.import_tasks: groups.yml
+
 - name: Configure Hostname
   ansible.builtin.import_tasks: hostname.yml
 

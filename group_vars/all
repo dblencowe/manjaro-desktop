@@ -116,7 +116,6 @@ user_groups:
     - docker
     - audio
     - uucp
-    - dialout
 
 zsh_plugins:
     - aws
