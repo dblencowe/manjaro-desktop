@@ -27,6 +27,7 @@ developer_stack:
     - arduino
     - mysql-workbench
     - helm
+    - python-pyserial
 
 developer_stack_aur:
     - aws-cli-v2-bin
