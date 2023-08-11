@@ -5,6 +5,7 @@
     - {role: base, tags: [base]}
     - {role: development, tags: [development]}
     - {role: multimedia, tags: [multimedia]}
+    - {role: comms, tags: [comms]}
     - {role: security, tags: [security]}
 
   handlers:
