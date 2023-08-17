@@ -24,6 +24,18 @@
     - development
     - aur
 
+- name: Install npm packages
+  become: true
+  community.general.npm:
+    name: "{{ item }}"
+    state: present
+    global: true
+  with_items: 
+    - "{{ npm_packages }}"
+  tags:
+    - dev-tools
+    - development
+
 - name: Configure Docker
   ansible.builtin.import_tasks: docker.yml
 
