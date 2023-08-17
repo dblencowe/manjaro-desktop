@@ -82,7 +82,7 @@ shell_aliases:
     - alias pbcopy='xsel --clipboard --input'
     - alias pbpaste='xsel --clipboard --output'
     - alias git-log="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all"
-    - mount-pvc() { sudo iscsiadm --mode node -T iqn.2000-01.com.synology:cluster-nas.$1 --portal cluster-nas-1.services.strawberryelk.internal --login }
+    - mount-pvc() { sudo iscsiadm --mode discovery -t sendtargets --portal cluster-nas-1.services.strawberryelk.internal 1> /dev/null; sudo iscsiadm --mode node -T iqn.2000-01.com.synology:cluster-nas.$1 --portal cluster-nas-1.services.strawberryelk.internal --login }
     - umount-pvc() { sudo iscsiadm -m node -T iqn.2000-01.com.synology:cluster-nas.$1 -u; sudo iscsiadm -m node -o delete -T iqn.2000-01.com.synology:cluster-nas.$1 }
 utils:
     - acpi_call-dkms
